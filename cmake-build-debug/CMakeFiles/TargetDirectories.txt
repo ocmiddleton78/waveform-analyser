@@ -1,0 +1,3 @@
+C:/Users/owen/OneDrive/Documents/UWE/Year 1/Power Quality Waveform Analyser/Submission/Code/cmake-build-debug/CMakeFiles/Code.dir
+C:/Users/owen/OneDrive/Documents/UWE/Year 1/Power Quality Waveform Analyser/Submission/Code/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/owen/OneDrive/Documents/UWE/Year 1/Power Quality Waveform Analyser/Submission/Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
