@@ -41,15 +41,20 @@ WaveformSample *load_csv(const char *filename, size_t *count) {
     size_t i = 0;
 
     while (fgets(line, sizeof(line), file) != NULL) {
-        sscanf(line, "%1f,%1f,%1f,%1f,%1f,%1f,%1f,%1f",
-               &samples[i].timestamp,
-               &samples[i].phase_A_voltage,
-               &samples[i].phase_B_voltage,
-               &samples[i].phase_C_voltage,
-               &samples[i].line_current,
-               &samples[i].frequency,
-               &samples[i].power_factor,
-               &samples[i].thd_percent);
+        int fields_read = sscanf(line, "%lf,%lf,%lf,%lf,%lf,%lf,%lf,%lf",
+                                 &samples[i].timestamp,
+                                 &samples[i].phase_A_voltage,
+                                 &samples[i].phase_B_voltage,
+                                 &samples[i].phase_C_voltage,
+                                 &samples[i].line_current,
+                                 &samples[i].frequency,
+                                 &samples[i].power_factor,
+                                 &samples[i].thd_percent);
+
+        if (fields_read != 8) {
+            printf("Problem reading row %zu, fields read: %d\n", i, fields_read);
+        }
+
         i++;
     }
 
