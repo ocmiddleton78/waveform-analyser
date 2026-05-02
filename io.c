@@ -14,10 +14,20 @@ WaveformSample *load_csv(const char *filename, size_t *count) {
         return NULL;
     }
 
-    printf("File opened inside load_csv\n");
+    char line[256];
+
+    fgets(line, sizeof(line), file);
+
+    size_t rows = 0;
+
+    while (fgets(line, sizeof(line), file) != NULL) {
+        rows++;
+    }
+
+    printf("Rows found: %zu\n", rows);
 
     fclose(file);
 
-    *count = 0;
-    return (WaveformSample *)1;
+    *count = rows;
+    return NULL;
 }
