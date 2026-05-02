@@ -18,6 +18,8 @@ int main(int argc, char *argv[]) {
     }
 
     printf("File opened successfully\n");
+    printf("First timestamp: %f\n", data[0].timestamp);
+    printf("Phase A voltage: %f\n", data[0].phase_A_voltage);
 
     //free(data);
 
