@@ -17,12 +17,6 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    printf("File opened successfully\n");
-    printf("First timestamp: %f\n", data[0].timestamp);
-    printf("Phase A voltage: %f\n", data[0].phase_A_voltage);
-    printf("Second timestamp: %f\n", data[1].timestamp);
-    printf("Second Phase A voltage: %f\n", data[1].phase_A_voltage);
-
     free(data);
 
     return 0;
