@@ -19,4 +19,10 @@ typedef struct {
     double thd_percent;
 } WaveformSample;
 
+double calculate_rms(const WaveformSample *samples, size_t count, char phase);
+double calculate_peak_to_peak(const WaveformSample *samples, size_t count, char phase);
+double calculate_dc_offset(const WaveformSample *samples, size_t count, char phase);
+int detect_clipping(const WaveformSample *samples, size_t count, char phase);
+int within_tolerance(double rms);
+
 #endif
