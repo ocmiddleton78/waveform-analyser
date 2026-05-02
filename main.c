@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
     printf("File opened successfully\n");
 
-    free(data);
+    //free(data);
 
     return 0;
 }
