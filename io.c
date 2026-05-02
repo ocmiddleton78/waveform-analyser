@@ -14,6 +14,10 @@ WaveformSample *load_csv(const char *filename, size_t *count) {
         return NULL;
     }
 
+    printf("File opened inside load_csv\n");
+
     fclose(file);
-    return NULL;
+
+    *count = 0;
+    return (WaveformSample *)1;
 }
