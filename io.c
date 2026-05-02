@@ -26,8 +26,16 @@ WaveformSample *load_csv(const char *filename, size_t *count) {
 
     printf("Rows found: %zu\n", rows);
 
+    WaveformSample *samples = malloc(rows * sizeof(WaveformSample));
+
+    if (samples == NULL) {
+        printf("Memory allocation failed\n");
+        fclose(file);
+        return NULL;
+    }
+
     fclose(file);
 
     *count = rows;
-    return NULL;
+    return samples;
 }
