@@ -24,8 +24,6 @@ WaveformSample *load_csv(const char *filename, size_t *count) {
         rows++;
     }
 
-    printf("Rows found: %zu\n", rows);
-
     WaveformSample *samples = malloc(rows * sizeof(WaveformSample));
 
     if (samples == NULL) {
