@@ -26,6 +26,14 @@ int main(int argc, char *argv[]) {
     printf("DC Offset B: %f\n", dcB);
     printf("DC Offset C: %f\n", dcC);
 
+    double rmsA = calculate_rms(data, count, 'A');
+    double rmsB = calculate_rms(data, count, 'B');
+    double rmsC = calculate_rms(data, count, 'C');
+
+    printf("RMS A: %f\n", rmsA);
+    printf("RMS B: %f\n", rmsB);
+    printf("RMS C: %f\n", rmsC);
+
     free(data);
 
     return 0;
