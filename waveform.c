@@ -41,3 +41,30 @@ double calculate_rms(const WaveformSample *samples, size_t count, char phase) {
     double mean = total / count;
     return sqrt(mean);
 }
+
+double calculate_peak_to_peak(const WaveformSample *samples, size_t count, char phase) {
+    double min = 0.0;
+    double max = 0.0;
+
+    for (size_t i = 0; i < count; i++) {
+        double value = 0.0;
+
+        if (phase == 'A') {
+            value = samples[i].phase_A_voltage;
+        } else if (phase == 'B') {
+            value = samples[i].phase_B_voltage;
+        } else if (phase == 'C') {
+            value = samples[i].phase_C_voltage;
+        }
+
+        if (i ==0 || value < min) {
+            min = value;
+        }
+
+        if (i == 0 || value > max) {
+            max = value;
+        }
+    }
+
+    return max - min;
+}
