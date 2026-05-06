@@ -68,3 +68,25 @@ double calculate_peak_to_peak(const WaveformSample *samples, size_t count, char 
 
     return max - min;
 }
+
+int detect_clipping(const WaveformSample *samples, size_t count, char phase) {
+    int clipped_count = 0;
+
+    for (size_t i = 0; i < count; i++) {
+        double value = 0.0;
+
+        if (phase == 'A') {
+            value = samples[i].phase_A_voltage;
+        } else if (phase == 'B') {
+            value = samples[i].phase_B_voltage;
+        } else if (phase == 'C') {
+            value = samples[i].phase_C_voltage;
+        }
+
+        if (value >= 324.9 || value <= -324.9) {
+            clipped_count++;
+        }
+    }
+
+    return clipped_count;
+}
