@@ -42,6 +42,14 @@ int main(int argc, char *argv[]) {
     printf("Peak to peak B: %f\n", p2pB);
     printf("Peak to peak C: %f\n", p2pC);
 
+    int clipA = detect_clipping(data, count, 'A');
+    int clipB = detect_clipping(data, count, 'B');
+    int clipC = detect_clipping(data, count, 'C');
+
+    printf("Clipping count A: %d\n", clipA);
+    printf("Clipping count B: %d\n", clipB);
+    printf("Clipping count C: %d\n", clipC);
+
     free(data);
 
     return 0;
