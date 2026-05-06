@@ -50,6 +50,14 @@ int main(int argc, char *argv[]) {
     printf("Clipping count B: %d\n", clipB);
     printf("Clipping count C: %d\n", clipC);
 
+    int tolA = within_tolerance(rmsA);
+    int tolB = within_tolerance(rmsB);
+    int tolC = within_tolerance(rmsC);
+
+    printf("Tolerance A: %d\n", tolA);
+    printf("Tolerance B: %d\n", tolB);
+    printf("Tolerance C: %d\n", tolC);
+
     free(data);
 
     return 0;
