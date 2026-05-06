@@ -34,6 +34,14 @@ int main(int argc, char *argv[]) {
     printf("RMS B: %f\n", rmsB);
     printf("RMS C: %f\n", rmsC);
 
+    double p2pA = calculate_peak_to_peak(data, count, 'A');
+    double p2pB = calculate_peak_to_peak(data, count, 'B');
+    double p2pC = calculate_peak_to_peak(data, count, 'C');
+
+    printf("Peak to peak A: %f\n", p2pA);
+    printf("Peak to peak B: %f\n", p2pB);
+    printf("Peak to peak C: %f\n", p2pC);
+
     free(data);
 
     return 0;
