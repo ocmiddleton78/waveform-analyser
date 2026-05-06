@@ -83,7 +83,7 @@ int detect_clipping(const WaveformSample *samples, size_t count, char phase) {
             value = samples[i].phase_C_voltage;
         }
 
-        if (value >= 324.9 || value <= -324.9) {
+        if (fabs(value) >= 324.9) {
             clipped_count++;
         }
     }
