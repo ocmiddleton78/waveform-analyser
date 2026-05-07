@@ -92,7 +92,7 @@ int detect_clipping(const WaveformSample *samples, size_t count, char phase) {
 }
 
 int within_tolerance(double rms) {
-    if (rms >= 220.0 && rms <= 240.0) {
+    if (rms >= 207.0 && rms <= 253.0) {
         return 1;
     } else {
         return 0;
