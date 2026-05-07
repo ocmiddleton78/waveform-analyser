@@ -58,6 +58,12 @@ int main(int argc, char *argv[]) {
     printf("Tolerance B: %d\n", tolB);
     printf("Tolerance C: %d\n", tolC);
 
+    write_results("results.txt",
+                  rmsA, rmsB, rmsC,
+                  p2pA, p2pB, p2pC,
+                  dcA, dcB, dcC,
+                  clipA, clipB, clipC);
+
     free(data);
 
     return 0;
